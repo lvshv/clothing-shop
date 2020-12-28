@@ -1,25 +1,30 @@
 {
   "files": {
-    "main.css": "/clothing-shop/static/css/main.ca8d67da.chunk.css",
-    "main.js": "/clothing-shop/static/js/main.2fec8311.chunk.js",
-    "main.js.map": "/clothing-shop/static/js/main.2fec8311.chunk.js.map",
+    "main.css": "/clothing-shop/static/css/main.a8588d6a.chunk.css",
+    "main.js": "/clothing-shop/static/js/main.bb6d5d20.chunk.js",
+    "main.js.map": "/clothing-shop/static/js/main.bb6d5d20.chunk.js.map",
     "runtime-main.js": "/clothing-shop/static/js/runtime-main.7949cb76.js",
     "runtime-main.js.map": "/clothing-shop/static/js/runtime-main.7949cb76.js.map",
-    "static/js/2.3a16c694.chunk.js": "/clothing-shop/static/js/2.3a16c694.chunk.js",
-    "static/js/2.3a16c694.chunk.js.map": "/clothing-shop/static/js/2.3a16c694.chunk.js.map",
+    "static/css/2.67810363.chunk.css": "/clothing-shop/static/css/2.67810363.chunk.css",
+    "static/js/2.d12e7291.chunk.js": "/clothing-shop/static/js/2.d12e7291.chunk.js",
+    "static/js/2.d12e7291.chunk.js.map": "/clothing-shop/static/js/2.d12e7291.chunk.js.map",
     "index.html": "/clothing-shop/index.html",
-    "static/css/main.ca8d67da.chunk.css.map": "/clothing-shop/static/css/main.ca8d67da.chunk.css.map",
-    "static/js/2.3a16c694.chunk.js.LICENSE.txt": "/clothing-shop/static/js/2.3a16c694.chunk.js.LICENSE.txt",
+    "static/css/2.67810363.chunk.css.map": "/clothing-shop/static/css/2.67810363.chunk.css.map",
+    "static/css/main.a8588d6a.chunk.css.map": "/clothing-shop/static/css/main.a8588d6a.chunk.css.map",
+    "static/js/2.d12e7291.chunk.js.LICENSE.txt": "/clothing-shop/static/js/2.d12e7291.chunk.js.LICENSE.txt",
     "static/media/Logo.b7731fd1.svg": "/clothing-shop/static/media/Logo.b7731fd1.svg",
     "static/media/jacket.3d64058e.webp": "/clothing-shop/static/media/jacket.3d64058e.webp",
+    "static/media/HeroCatalog.scss": "/clothing-shop/static/media/jacket.b1da8437.jpg",
     "static/media/sale.f62074cf.jpg": "/clothing-shop/static/media/sale.f62074cf.jpg",
+    "static/media/slide1.15bdfdbe.png": "/clothing-shop/static/media/slide1.15bdfdbe.png",
     "static/media/slide2.41199237.jpg": "/clothing-shop/static/media/slide2.41199237.jpg",
     "static/media/sneakers.52d50759.webp": "/clothing-shop/static/media/sneakers.52d50759.webp"
   },
   "entrypoints": [
     "static/js/runtime-main.7949cb76.js",
-    "static/js/2.3a16c694.chunk.js",
-    "static/css/main.ca8d67da.chunk.css",
-    "static/js/main.2fec8311.chunk.js"
+    "static/css/2.67810363.chunk.css",
+    "static/js/2.d12e7291.chunk.js",
+    "static/css/main.a8588d6a.chunk.css",
+    "static/js/main.bb6d5d20.chunk.js"
   ]
 }
