@@ -1,0 +1,13 @@
+.products__items {
+  display: flex;
+  @include md {
+    flex-direction: column;
+  }
+}
+.product__items-cards {
+  display: flex;
+  flex-wrap: wrap;
+  @include md {
+    justify-content: center;
+  }
+}

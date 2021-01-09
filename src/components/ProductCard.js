@@ -1,24 +1,46 @@
 import React from 'react';
-import jacket from '../images/jacket.jpg';
-import './ProductCard.scss';
+import sneaker from '../images/sneakers.webp';
+import jacket from '../images/jacket.webp';
+
 import { Link } from 'react-router-dom';
 
-const ProductCard = () => {
+const ProductCard = ({
+  title,
+  color,
+  price,
+  image_one,
+  image_two,
+  id,
+  cardViewType,
+}) => {
+  const [image, setImage] = React.useState(true);
+
+  const mouseOver = () => {
+    setImage(!image);
+  };
+
   return (
-    <div className='product'>
-      <div to='/product' className='product__image'>
-        <img src={jacket} alt='jacket' />
+    <article
+      className='product'
+      onMouseEnter={mouseOver}
+      onMouseLeave={mouseOver}
+    >
+      <div className='product__image'>
+        <img
+          src={cardViewType === 0 ? image_one : image_two || sneaker}
+          alt='jacket'
+        />
       </div>
 
       <h3 className='product__title'>
-        <Link to='/product'>Champion Reverse Weave</Link>
+        <Link to={`/product/${id}`}>{title || 'Champion Reverse Weave'}</Link>
       </h3>
 
       <p className='product__desc'>
-        Mens jacket Water Rpelient Shiny Nylon Hooded
+        {color || 'Mens jacket Water Rpelient Shiny Nylon Hooded'}
       </p>
-      <span className='product__price'>19 990Р</span>
-    </div>
+      <span className='product__price'>{price || '1999'} $</span>
+    </article>
   );
 };
 

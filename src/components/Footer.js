@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Footer.scss';
+import { FiInstagram, FiFacebook, FiTwitter } from 'react-icons/fi';
 
 const Footer = () => {
   return (
@@ -44,7 +44,7 @@ const Footer = () => {
             </div>
             <div className='footer__column'>
               <h3 className='footer__title'>CONTACT US</h3>
-              <ul className='footer__list'>
+              <ul className='footer__'>
                 <li className='footer__item'>
                   <a href='#'>+44 (0)333 323 7728</a>
                 </li>
@@ -73,10 +73,28 @@ const Footer = () => {
                   Subscribe
                 </button>
               </form>
-              <div className='footer__social'>123</div>
+              <div className='footer__social'>
+                <ul className='footer__social-list'>
+                  <li className='footer__social-item'>
+                    <a href='https://instagram.com' target='_blank'>
+                      <FiInstagram />
+                    </a>
+                  </li>
+                  <li className='footer__social-item'>
+                    <a href='https://facebook.com' target='_blank'>
+                      <FiFacebook />
+                    </a>
+                  </li>
+                  <li className='footer__social-item'>
+                    <a href='https://twitter.com' target='_blank'>
+                      <FiTwitter />
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div className='footer__bottom'>
+          {/* <div className='footer__bottom'>
             <div className='footer__left'>
               <ul className='footer__list'>
                 <li className='footer__item'>
@@ -91,7 +109,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className='footer__right'></div>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

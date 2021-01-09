@@ -1,0 +1,18 @@
+.checkout {
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    // max-width: 400px;
+    @include md {
+      flex-direction: column;
+    }
+  }
+  &-items {
+    flex-basis: 50%;
+  }
+  &-data {
+    flex-basis: 45%;
+    // flex-grow: 1;
+  }
+}

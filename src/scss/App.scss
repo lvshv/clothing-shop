@@ -1,0 +1,91 @@
+@import 'mixins';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import 'Navbar.scss';
+@import 'Footer.scss';
+// @import 'Banner.scss';
+@import 'HeroSlider.scss';
+@import 'PopularProducts.scss';
+@import 'ProductCard.scss';
+@import 'Categories.scss';
+@import 'Banner.scss';
+@import 'ProductsPage.scss';
+@import 'Products.scss';
+@import 'Breadcrumbs.scss';
+@import 'ProductPage.scss';
+@import 'CartSidebar.scss';
+@import 'Checkout.scss';
+@import 'ProductsToolbar.scss';
+@import 'Loader.scss';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+html,
+body {
+  font-size: 14px;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+/* копия */
+body {
+  overflow-anchor: none;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-right: auto;
+  margin-left: auto;
+  /* text-align: center; */
+}
+
+/* скопировал */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 calc(5px + (15 - 5) * (100vw - 320px) / (1200 - 320));
+  max-width: 1200px;
+  @media screen and (max-width: 960) {
+  }
+}
+.default-page {
+  height: 70vh;
+  color: #aaa;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

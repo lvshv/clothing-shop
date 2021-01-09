@@ -1,0 +1,121 @@
+.products__toolbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  @include md {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  &-view {
+    margin-right: 10px;
+    @include md {
+      padding: 15px 0;
+      border-bottom: 1px solid black;
+    }
+  }
+  &-handlers {
+    display: flex;
+    @include md {
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+  }
+  &-sort {
+    position: relative;
+    @include md {
+      padding: 15px 0;
+      border-bottom: 1px solid black;
+    }
+  }
+  &-list {
+    position: absolute;
+    width: 200px;
+    top: 20px;
+    right: 0;
+    z-index: 20;
+    border: 1px solid rgb(247, 247, 247);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    opacity: 0;
+    width: 0;
+    transition: all 0.3s;
+
+    &.active {
+      opacity: 1;
+      width: 200px;
+    }
+    @include md {
+      display: inline-block;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 0px;
+      opacity: 0;
+      display: none;
+      &.active {
+        display: inline-block;
+        position: relative;
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px solid #000;
+      }
+    }
+  }
+  &-item {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    text-align: start;
+    font-weight: 600;
+    &:hover {
+      background-color: rgb(247, 247, 247);
+    }
+    &.active {
+      font-weight: 700;
+      background-color: rgb(247, 247, 247);
+    }
+
+    &:first-child {
+      border-bottom: 1px solid rgb(247, 247, 247);
+    }
+    @include md {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  &-counter {
+    @include md {
+      order: 3;
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+}
+
+.btn-toolbar {
+  border: none;
+  outline: none;
+  background: transparent;
+  display: flex;
+  position: relative;
+  & span {
+    padding: 0 5px;
+  }
+  &__icon {
+    align-self: center;
+  }
+  @include md {
+    display: block;
+    border-bottom: 1px solid #000;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}

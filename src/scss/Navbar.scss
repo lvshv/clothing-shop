@@ -1,6 +1,6 @@
 .header {
   border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
-  margin-bottom: 20px;
+
   &__news {
     height: 30px;
     padding: 8px 16px;
@@ -21,7 +21,15 @@
 
 .logo {
   display: inline-block;
-  transform: scale(0.8);
+
+  width: 110px;
+  img {
+    transform: translateY(4px);
+    width: 100%;
+  }
+  @include md {
+    transform: translateX(25px);
+  }
 }
 
 .nav {
@@ -40,10 +48,11 @@
 
   &__link {
     text-decoration: none;
+    text-transform: uppercase;
     color: #000;
   }
 
-  @media screen and(max-width: 991px) {
+  @include md {
     display: none;
   }
 }
@@ -55,9 +64,18 @@
   justify-content: space-between;
 
   .user-nav__btn {
+    position: relative;
     outline: none;
     border: none;
     background-color: transparent;
+    &--items {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 10px;
+      font-weight: 700;
+      transform: translate(-50%, -50%);
+    }
   }
 }
 
@@ -70,7 +88,7 @@
   display: none;
   z-index: 11;
 
-  @media screen and (max-width: 961px) {
+  @include md {
     display: block;
     z-index: 10;
   }
@@ -78,15 +96,16 @@
 .overlay {
   height: 100vh;
   width: 100vw;
-  position: absolute;
+  position: fixed;
+  // overflow: hidden;
   top: 0;
   left: 0;
   opacity: 0.6;
   z-index: 9;
-  background: rgb(26, 26, 26);
+  background: #000;
 }
 
-.nav-menu {
+.side-nav {
   width: 250px;
   height: 100vh;
   display: flex;
@@ -100,52 +119,49 @@
     left: 0;
     transition: 350ms;
   }
+  &__items {
+    width: 100%;
+    background-color: #fff;
+  }
+  &__text {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px 0px 8px 16px;
+    list-style: none;
+    text-transform: uppercase;
+    height: 60px;
+  }
+  &__link {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+
+    &:hover {
+      background-color: #1a83ff;
+    }
+  }
 }
 
-.nav-text {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 8px 0px 8px 16px;
-  list-style: none;
-  height: 60px;
-}
-
-.nav-text a {
-  text-decoration: none;
-  color: #000;
-  font-size: 18px;
-  width: 95%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding: 0 16px;
-  border-radius: 4px;
-}
-
-.nav-text a:hover {
-  background-color: #1a83ff;
-}
-
-.nav-menu-items {
-  width: 100%;
-  background-color: #fff;
-}
-
-.navbar-toggle {
-  background-color: #fff;
-  width: 100%;
-  height: 80px;
-  display: flex;
-  z-index: 13;
-  justify-content: flex-start;
-  align-items: center;
-}
+// .navbar-toggle {
+//   background-color: #fff;
+//   width: 100%;
+//   height: 80px;
+//   display: flex;
+//   z-index: 13;
+//   justify-content: flex-start;
+//   align-items: center;
+// }
 
 .login {
   padding: 20px 10px;
   position: fixed;
-  width: 660px;
+  max-width: 660px;
   min-height: 266px;
   top: 50%;
   left: 0;

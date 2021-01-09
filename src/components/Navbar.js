@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { useSelector } from 'react-redux';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { RiBarChartHorizontalLine } from 'react-icons/ri';
@@ -6,23 +7,24 @@ import { BsBag } from 'react-icons/bs';
 import { BiSearch } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
-import './Navbar.scss';
 import { IconContext } from 'react-icons';
 import Logo from '../images/Logo.svg';
+import CartSidebar from './CartSidebar';
+import Overlay from './Overlay';
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
-
+  const [cartSidebar, setCartSidebar] = useState(false);
+  const itemsInCart = useSelector((state) => state.cart.items);
   const showSidebar = () => setSidebar(!sidebar);
   const showLoginModal = () => setLoginModal(!loginModal);
-  const overlay = useRef();
+  const showCart = () => setCartSidebar(!cartSidebar);
 
-  const hideSidebar = () => {
-    if (overlay.current) {
-      setSidebar(false);
-      setLoginModal(false);
-    }
+  const closeModal = () => {
+    setSidebar(false);
+    setLoginModal(false);
+    setCartSidebar(false);
   };
 
   return (
@@ -32,33 +34,35 @@ function Navbar() {
       </div>
       {loginModal && (
         <div className='login'>
-          <h2>Login or register</h2>
-          <p>Please enter your email addres to continue</p>
-          <label htmlFor='uname'>
-            <b>Username</b>
-          </label>
-          <input
-            type='text'
-            placeholder='Enter Username'
-            name='uname'
-            required
-          />
+          <div className='container'>
+            <h2>Login or register</h2>
+            <p>Please enter your email addres to continue</p>
+            <label htmlFor='uname'>
+              <b>Username</b>
+            </label>
+            <input
+              type='text'
+              placeholder='Enter Username'
+              name='uname'
+              required
+            />
 
-          <label htmlFor='psw'>
-            <b>Password</b>
-          </label>
-          <input
-            type='password'
-            placeholder='Enter Password'
-            name='psw'
-            required
-          />
-          <button type='submit'>Login</button>
+            <label htmlFor='psw'>
+              <b>Password</b>
+            </label>
+            <input
+              type='password'
+              placeholder='Enter Password'
+              name='psw'
+              required
+            />
+            <button type='submit'>Login</button>
+          </div>
         </div>
       )}
 
-      {sidebar || loginModal ? (
-        <div className='overlay' ref={overlay} onClick={hideSidebar}></div>
+      {sidebar || loginModal || cartSidebar ? (
+        <Overlay onClick={closeModal} />
       ) : (
         ''
       )}
@@ -75,7 +79,11 @@ function Navbar() {
               {SidebarData.map((item, index) => {
                 return (
                   <li key={item.title} className='nav__item'>
-                    <Link to='/' className='nav__link' aria-label='logo'>
+                    <Link
+                      to={item.path}
+                      className='nav__link'
+                      aria-label='logo'
+                    >
                       {item.title}
                     </Link>
                   </li>
@@ -90,8 +98,11 @@ function Navbar() {
               </button>
             </li>
             <li className='user-nav__item'>
-              <button className='user-nav__btn'>
+              <button className='user-nav__btn' onClick={showCart}>
                 <BsBag />
+                <span className='user-nav__btn--items'>
+                  {itemsInCart.length ? itemsInCart.length : ''}
+                </span>
               </button>
             </li>
             <li className='user-nav__item'>
@@ -101,12 +112,12 @@ function Navbar() {
             </li>
           </ul>
         </div>
-        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-          <ul className='nav-menu-items' onClick={showSidebar}>
+        <nav className={sidebar ? 'side-nav active' : 'side-nav'}>
+          <ul className='side-nav__items' onClick={showSidebar}>
             {SidebarData.map((item, index) => {
               return (
-                <li key={index} className={item.cName}>
-                  <Link to={item.path}>
+                <li key={index} className='side-nav__text'>
+                  <Link className='side-nav__link' to={item.path}>
                     <span>{item.title}</span>
                   </Link>
                 </li>
@@ -115,6 +126,7 @@ function Navbar() {
           </ul>
         </nav>
       </IconContext.Provider>
+      <CartSidebar active={cartSidebar} />
     </header>
   );
 }

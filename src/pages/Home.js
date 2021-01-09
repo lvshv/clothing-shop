@@ -1,17 +1,19 @@
 import React from 'react';
 
 import { Categories } from '../components/Categories';
-import ProductCard from '../components/ProductCard';
+// import ProductCard from '../components/ProductCard';
 import Banner from '../components/Banner';
 import PopularProducts from '../components/PopularProducts';
+import { HeroSlider } from '../components/HeroSlider';
 
 const Home = () => {
   return (
-    <div className='container'>
-      <Categories />
-      <Banner />
+    <>
+      <HeroSlider />
       <PopularProducts />
-    </div>
+      <Banner />
+      <Categories />
+    </>
   );
 };
 
