@@ -1,16 +1,11 @@
 .popular__items {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  // justify-content: flex-start;
-  gap: 40px 24px;
-  // align-items: center;
-  margin-bottom: 80px;
-  @include md {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px 24px;
-    // flex-wrap: wrap;
-    // justify-content: space-around;
-  }
+  // display: flex;
+  margin-bottom: 60px;
+  position: relative;
+  // flex-wrap: wrap;
+  // @include lg {
+  //   max-width: 500px;
+  // }
 }
 
 .popular__title {

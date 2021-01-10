@@ -30,7 +30,7 @@ export const HeroSlider = () => {
             <div className='swiper-slide__content'>
               <h2 className='swiper-slide__title'>GIVENCHY</h2>
               <p className='swiper-slide__desc'>The Season's Latest</p>
-              <Link className='swiper-slide__link' to='/brands/givenchy'>
+              <Link className='swiper-slide__link' to='/latest'>
                 SHOP NOW
               </Link>
             </div>
@@ -41,7 +41,7 @@ export const HeroSlider = () => {
             <div className='swiper-slide__content'>
               <h2 className='swiper-slide__title'>GIVENCHY</h2>
               <p className='swiper-slide__desc'>The Season's Latest</p>
-              <Link className='swiper-slide__link' to='/brands/givenchy'>
+              <Link className='swiper-slide__link' to='/latest'>
                 SHOP NOW
               </Link>
             </div>

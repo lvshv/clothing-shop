@@ -18,11 +18,11 @@ export const SidebarData = [
   },
   {
     title: 'Clothing',
-    path: '/clothing',
+    path: '/latest',
   },
   {
     title: 'Footwear',
-    path: '/footwear',
+    path: '/latest',
   },
   {
     title: 'Sale',

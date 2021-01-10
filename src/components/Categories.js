@@ -13,7 +13,7 @@ export const Categories = () => {
               <img src={Slide1} alt='' className='hero__item-img' />
             </Link>
             <h2 className='hero__item-title'>Clothing</h2>
-            <Link to='/clothing' className='hero__item-link'>
+            <Link to='/latest' className='hero__item-link'>
               view
             </Link>
           </div>
@@ -22,7 +22,7 @@ export const Categories = () => {
               <img src={Slide2} alt='' className='hero__item-img' />
             </Link>
             <h2 className='hero__item-title'>Sneakers</h2>
-            <Link to='/sneakers' className='hero__item-link'>
+            <Link to='/latest' className='hero__item-link'>
               view
             </Link>
           </div>

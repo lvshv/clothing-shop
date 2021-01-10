@@ -87,6 +87,24 @@ const cart = (state = initialState, action) => {
         loading: false,
       };
     }
+    case 'DELETE_ITEM_FROM_CART': {
+      const idx = state.items.findIndex(
+        (item) =>
+          item.id === action.payload.id && item.size === action.payload.size
+      );
+
+      const copyArr = JSON.parse(JSON.stringify(state.items));
+
+      copyArr.splice(idx, 1);
+      const newPrice = calcTotalPrice(copyArr);
+      const newTotalCount = calcTotalCount(copyArr);
+      return {
+        ...state,
+        items: copyArr,
+        totalPrice: newPrice,
+        totalCount: newTotalCount,
+      };
+    }
 
     default:
       return state;

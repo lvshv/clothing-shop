@@ -50,21 +50,7 @@ const CheckoutPage = () => {
             </div>
           </div>
           <div className='checkout-data'>
-            <h2>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Cupiditate quidem fugit fuga nobis facere, eos iste alias impedit
-              quod quas? Doloremque veniam totam maxime necessitatibus aut!
-              Omnis harum illo ipsa nisi numquam mollitia animi voluptatibus
-              sed. Reiciendis, accusantium error. Tempore ad recusandae maiores
-              rem. Fuga, doloremque eos aperiam unde iste accusamus eaque
-              voluptate natus ipsa, exercitationem architecto doloribus
-              inventore quisquam ullam necessitatibus aliquam delectus saepe
-              molestiae nobis rerum, est repudiandae ad officia non! Voluptates,
-              ab libero obcaecati iure, nihil dolorem possimus unde amet rerum,
-              assumenda illo similique qui nulla recusandae nam laboriosam
-              laborum. Odit, sapiente incidunt voluptas quibusdam quos
-              laboriosam!
-            </h2>
+            <h2>Shipping Address</h2>
           </div>
         </div>
       </div>

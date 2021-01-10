@@ -200,9 +200,9 @@ export const ProductsData = [
 ];
 
 export const brandData = [
-  { name: 'adidas Consortium' },
-  { name: 'adidas Originals' },
-  { name: 'adidas Performance' },
+  { name: 'Acne Studios' },
+  { name: 'Adidas Originals' },
+  { name: 'Adidas Performance' },
   { name: 'Arcteryx' },
   { name: 'ASICS' },
   { name: 'Canada Goose' },
@@ -211,9 +211,12 @@ export const brandData = [
   { name: 'Hoka One One' },
   { name: 'Jordan' },
   { name: 'Maharishi' },
+  { name: 'Neighborhood' },
   { name: 'Nike' },
   { name: 'Nike SB' },
   { name: 'Patagonia' },
   { name: 'Stone Island' },
   { name: 'Stone Island Shadow Project' },
+  { name: 'Versace' },
+  { name: 'Wtaps' },
 ];

@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Overlay = ({ onClick }) => {
-  // return <div className='overlay' onClick={onClick}></div>;
   return <div className='overlay' onClick={onClick}></div>;
 };
 

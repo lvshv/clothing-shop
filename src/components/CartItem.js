@@ -19,6 +19,12 @@ const CartItem = ({ title, image_one, color, size, price, count, id }) => {
       payload: { id, size },
     });
   };
+  const deleteItemFromCart = () => {
+    dispatch({
+      type: 'DELETE_ITEM_FROM_CART',
+      payload: { id, size },
+    });
+  };
   return (
     <div className='cart-item'>
       <div className='cart-item__image'>
@@ -27,7 +33,10 @@ const CartItem = ({ title, image_one, color, size, price, count, id }) => {
       <div className='cart-item__content'>
         <div className='cart-item__content-header'>
           <span className='cart-item__content-title'>{title}</span>
-          <button className='cart-item__content-btn'>
+          <button
+            className='cart-item__content-btn'
+            onClick={deleteItemFromCart}
+          >
             <RiDeleteBin6Line />
           </button>
         </div>

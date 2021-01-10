@@ -2,6 +2,7 @@ import React from 'react';
 import ProductsFilters from '../components/ProductsFilters';
 import ProductCard from '../components/ProductCard';
 import Breadcrumbs from '../components/Breadcrumbs';
+// @ts-ignore
 import { BsChevronUp, BsChevronDown } from 'react-icons/bs';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,6 +11,7 @@ import Loader from '../components/Loader';
 import {
   sortProductsLowPrice,
   sortProductsHighPrice,
+  // @ts-ignore
   filterProductsData,
 } from '../redux/actions/productsActions';
 
@@ -21,6 +23,7 @@ const Products = () => {
   // const [products, setProducts] = React.useState([]);
   const [keywords, setKeywords] = React.useState([]);
   const dispatch = useDispatch();
+  // @ts-ignore
   const productsState = useSelector((state) => state.products);
   const { items, loading } = productsState;
 
@@ -32,15 +35,18 @@ const Products = () => {
     }
   };
   React.useEffect(() => {
-    document.body.addEventListener('click', outsideClickHandler);
+    window.document.body.addEventListener('click', outsideClickHandler);
     dispatch(fetchProducts());
-    // setProducts(items);
+    return () =>
+      window.document.body.removeEventListener('click', outsideClickHandler);
   }, []);
 
+  // @ts-ignore
   const openViewHandler = (e) => {
     setSortBy(false);
     setView(!view);
   };
+  // @ts-ignore
   const openSortByHandler = (e) => {
     setView(false);
     setSortBy(!sortBy);
@@ -64,12 +70,25 @@ const Products = () => {
     setCardViewType(1);
   };
   const checkedHandler = (e) => {
-    setKeywords([...keywords, e.target.value]);
-  };
-  const filterByBrands = (arr) => {
-    keywords.filter((item) => arr.includes(item));
+    if (keywords.includes(e.target.value)) {
+      const newArr = keywords.filter((word) => word !== e.target.value);
+      // console.log(newArr);
+      setKeywords(newArr);
+    } else {
+      setKeywords([...keywords, e.target.value]);
+    }
   };
 
+  const myArrayFiltered = (arr) => {
+    if (!keywords.length) {
+      return arr;
+    }
+    return arr.filter((item) => {
+      return keywords.some((brand) => {
+        return item.brand.toLowerCase() === brand.toLowerCase();
+      });
+    });
+  };
   return (
     <section className='products__section'>
       <div className='container'>
@@ -174,15 +193,17 @@ const Products = () => {
                 </div>
               </div>
               <div className='product__items-cards'>
-                {filterByBrands(items).map((item, index) => {
-                  return (
-                    <ProductCard
-                      key={item.id}
-                      {...item}
-                      cardViewType={cardViewType}
-                    />
-                  );
-                })}
+                {myArrayFiltered(items)
+                  // @ts-ignore
+                  .map((item, index) => {
+                    return (
+                      <ProductCard
+                        key={item.id}
+                        {...item}
+                        cardViewType={cardViewType}
+                      />
+                    );
+                  })}
               </div>
             </div>
           </div>
